@@ -1,10 +1,14 @@
 version: 2
 sources:
   - name: raw
+    schema: gz_raw_data
     tables:
       - name: sales
-        description: Sales table in BigQuery
+        identifier: raw_gz_sales
+        description: Sales table in BigQuery - we want to rename the identifier in BQ as name
       - name: product
-        description: product table in BigQuery
+        identifier: raw_gz_product
+        description: product table in BigQuery - we want to rename the identifier in BQ as name
       - name: ship
-        description: product ship in BigQuery
+        identifier: raw_gz_ship
+        description: ship table in BigQuery - we want to rename the identifier in BQ as name
