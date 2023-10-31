@@ -1,0 +1,10 @@
+version: 2
+sources:
+  - name: raw
+    tables:
+      - name: sales
+        description: Sales table in BigQuery
+      - name: product
+        description: product table in BigQuery
+      - name: ship
+        description: product ship in BigQuery
