@@ -1,0 +1,36 @@
+version: 2
+sources:
+  - name: raw
+    schema: gz_raw_data
+    description: greenweez raw data source
+    tables:
+      - name: sales
+        freshness: 
+          warn_after:
+            count: 90
+            period: day
+        loaded_at_field: "CAST(date_date as TIMESTAMP)"
+
+      
+        identifier: raw_gz_sales
+        description: Sales of Greenweez / Sales table in BigQuery - we want to rename the identifier in BQ as name
+        tests:
+          - unique:
+              column_name: "(orders_id || '-' || pdt_id)"
+      - name: product
+        identifier: raw_gz_product
+        description: Product of Greenweez / Product table in BigQuery - we want to rename the identifier in BQ as name
+        columns:
+          - name: products_id
+            tests:
+              - unique
+              - not_null           
+      - name: ship
+        identifier: raw_gz_ship
+        description: Ship of Greenweez / Ship table in BigQuery - we want to rename the identifier in BQ as name
+        columns:
+          - name: orders_id
+            tests:
+              - unique
+              - not_null
+                  
