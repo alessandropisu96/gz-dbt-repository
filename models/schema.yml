@@ -33,4 +33,35 @@ sources:
             tests:
               - unique
               - not_null
-                  
+      - name: adwords
+        identifier: raw_gz_adwords
+        description: Adwords of Greenweez / Adwords table in BigQuery - we want to rename the identifier in BQ as name
+        columns:
+          - name: date_date
+            tests:
+              - unique
+              - not_null
+      - name: bing
+        identifier: raw_gz_bing
+        description: Bing of Greenweez / Bing table in BigQuery - we want to rename the identifier in BQ as name
+        columns:
+          - name: date_date
+            tests:
+              - unique
+              - not_null
+      - name: criteo
+        identifier: raw_gz_criteo
+        description: Criteo of Greenweez / Criteo table in BigQuery - we want to rename the identifier in BQ as name
+        columns:
+          - name: date_date
+            tests:
+              - unique
+              - not_null
+      - name: facebook
+        identifier: raw_gz_facebook
+        description: Facebook of Greenweez / Facebook table in BigQuery - we want to rename the identifier in BQ as name
+        columns:
+          - name: date_date
+            tests:
+              - unique
+              - not_null                
